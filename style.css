@@ -1,0 +1,61 @@
+/*
+Theme Name: NS0014
+Theme URI: https://ns0014.com/
+Author: the general team
+Author URI: https://thegeneralteam.com/
+Description: test is the  starter theme created just for practise
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org.licenses/gpl-2.0.html
+Text Domain: ns0014
+Tags: one-column, post-formats
+
+*/
+@media (min-width: 991px) {
+    #footer-widget {
+        display: inline-flex;
+    }
+}
+.right-button {
+    display: inline-flex;
+}
+
+.main-content {
+    position: relative;
+  }
+  .main-content .owl-theme .custom-nav {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    right: 0;
+  }
+  .main-content .owl-theme .custom-nav .owl-prev, .main-content .owl-theme .custom-nav .owl-next {
+    position: absolute;
+    height: 100px;
+    color: inherit;
+    background: none;
+    border: none;
+    z-index: 100;
+  }
+  .main-content .owl-theme .custom-nav .owl-prev i, .main-content .owl-theme .custom-nav .owl-next i {
+    font-size: 2.5rem;
+    color: #cecece;
+  }
+  .main-content .owl-theme .custom-nav .owl-prev {
+    left: 0;
+  }
+  .main-content .owl-theme .custom-nav .owl-next {
+    right: 0;
+  }
+
+  .owl-dots {
+      display: none;
+  }
+
+  .owl-theme .custom-nav {
+    display: none;
+  }
+
+  .main-content:hover .custom-nav {
+    display: block;
+  }
