@@ -25,6 +25,7 @@ include 'inc/instagram_posts/instagram_post.php';
 
 //Registering custom shortcode
 include 'inc/short_code/short_code.php';
+include 'inc/short_code/social_icons.php';
 
 
 /*add theme support*/
@@ -95,7 +96,8 @@ add_action('wp_enqueue_scripts', 'add_owl_carousel');
 register_nav_menus([
     'main-menu' => esc_html__('Main Menu', 'ns0014'),
     'top-left-menu' => esc_html__('Top Left Menu', 'ns0014'),
-    'top-right-menu' => esc_html__('Top Right Menu', 'ns0014')
+    'top-right-menu' => esc_html__('Top Right Menu', 'ns0014'),
+    'secondary-menu' => esc_html__('Secondary Menu', 'ns0014'),
 
 ]);
 

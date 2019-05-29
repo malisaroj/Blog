@@ -1,6 +1,6 @@
 <?php
 
-function wpabsolute_instagram_shortcode( $atts, $content = null ) {
+function instagram_shortcode( $atts, $content = null ) {
 	$a = shortcode_atts( array(
 		'count' => 6 // How many images to display
 	), $atts );
@@ -26,4 +26,4 @@ function wpabsolute_instagram_shortcode( $atts, $content = null ) {
 	// Return the instagram feed.
 	return $return;
 }
-add_shortcode( 'wpab_instagram_feed', 'wpabsolute_instagram_shortcode' );
+add_shortcode( 'wpab_instagram_feed', 'instagram_shortcode' );

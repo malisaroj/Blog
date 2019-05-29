@@ -56,7 +56,7 @@ get_header(); ?>
                                                     ?>">
                                             <a href="#"><?php the_terms($post->ID, 'type',  ' '); ?></a>
                                         </div>
-                                        <a class="d-block" href="single-blog.html">
+                                        <a class="d-block" href="<?php echo esc_url(get_permalink(get_post()->ID)); ?>">
                                             <h4><?php echo get_the_title(); ?></h4>
                                         </a>
 
@@ -134,7 +134,7 @@ get_header(); ?>
                                     <div class="meta-top d-flex">
                                         <a href="#"><?php the_terms($post->ID, 'type',  ' '); ?></a>
                                     </div>
-                                    <a class="d-block" href="single-blog.html">
+                                    <a class="d-block" href="<?php echo esc_url(get_permalink(get_post()->ID)); ?>">
                                         <h4><?php echo get_the_title(); ?></h4>
                                     </a>
                                     <?php if ($count == 0) { ?>
@@ -223,7 +223,7 @@ get_header(); ?>
                                             <div class="meta-top d-flex">
                                                 <a href="#"><?php the_terms($post->ID, 'type',  ' '); ?></a>
                                             </div>
-                                            <a class="d-block" href="single-blog.html">
+                                            <a class="d-block" href="<?php echo esc_url(get_permalink(get_post()->ID)); ?>">
                                                 <h4 class="<?php if ($count == 1 || $count == 2) {
                                                                 echo 'font-20';
                                                             } ?>"><?php echo get_the_title(); ?></h4>
@@ -337,7 +337,7 @@ get_header(); ?>
                                 <div class="meta-top d-flex">
                                     <a href="#"><?php echo get_the_date(); ?></a>
                                 </div>
-                                <a class="d-block" href="single-blog.html">
+                                <a class="d-block" href="<?php echo esc_url(get_permalink(get_post()->ID)); ?>">
                                     <h4><?php echo get_the_title(); ?></h4>
                                 </a>
 
@@ -385,7 +385,7 @@ get_header(); ?>
                                 <div class="meta-top d-flex">
                                     <a href="#"><?php echo get_the_date(); ?></a>
                                 </div>
-                                <a class="d-block" href="single-blog.html">
+                                <a class="d-block" href="<?php echo esc_url(get_permalink(get_post()->ID)); ?>">
                                     <h4><?php echo get_the_title(); ?></h4>
                                 </a>
 
@@ -448,7 +448,7 @@ get_header(); ?>
                                         <div class="meta-top d-flex">
                                             <a href="#"><?php echo get_the_date(); ?></a>
                                         </div>
-                                        <a class="d-block" href="single-blog.html">
+                                        <a class="d-block" href="<?php echo esc_url(get_permalink(get_post()->ID)); ?>">
                                             <h4><?php echo get_the_title(); ?></h4>
                                         </a>
                                         <div class="meta-bottom d-flex">

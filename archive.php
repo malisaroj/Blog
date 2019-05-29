@@ -15,7 +15,7 @@ get_header();
           <h2><?php the_title(); ?></h2>
         </div>
         <div class="page_link">
-          <a href="index.html">Home</a>
+          <a href="<?php echo esc_url(home_url()); ?>">Home</a>
           <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
         </div>
       </div>
@@ -49,7 +49,7 @@ get_header();
                                 <div class="meta-top d-flex">
                                     <a href="#"> <?php echo get_the_date(); ?></a>
                                 </div>
-                                <a class="d-block" href="single-blog.html">
+                                <a class="d-block" href="<?php echo esc_url(get_permalink(get_post()->ID)); ?>">
                                     <h4><?php echo get_the_title(); ?></h4>
                                 </a>
 

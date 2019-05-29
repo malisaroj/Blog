@@ -12,50 +12,198 @@ Tags: one-column, post-formats
 
 */
 @media (min-width: 991px) {
-    #footer-widget {
-        display: inline-flex;
-    }
-}
-.right-button {
+  #footer-widget {
     display: inline-flex;
+  }
+}
+
+.right-button {
+  display: inline-flex;
 }
 
 .main-content {
-    position: relative;
-  }
-  .main-content .owl-theme .custom-nav {
-    position: absolute;
-    top: 20%;
-    left: 0;
-    right: 0;
-  }
-  .main-content .owl-theme .custom-nav .owl-prev, .main-content .owl-theme .custom-nav .owl-next {
-    position: absolute;
-    height: 100px;
-    color: inherit;
-    background: none;
-    border: none;
-    z-index: 100;
-  }
-  .main-content .owl-theme .custom-nav .owl-prev i, .main-content .owl-theme .custom-nav .owl-next i {
-    font-size: 2.5rem;
-    color: #cecece;
-  }
-  .main-content .owl-theme .custom-nav .owl-prev {
-    left: 0;
-  }
-  .main-content .owl-theme .custom-nav .owl-next {
-    right: 0;
-  }
+  position: relative;
+}
 
-  .owl-dots {
-      display: none;
-  }
+.main-content .owl-theme .custom-nav {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  right: 0;
+}
 
-  .owl-theme .custom-nav {
-    display: none;
-  }
+.main-content .owl-theme .custom-nav .owl-prev,
+.main-content .owl-theme .custom-nav .owl-next {
+  position: absolute;
+  height: 100px;
+  color: inherit;
+  background: none;
+  border: none;
+  z-index: 100;
+}
 
-  .main-content:hover .custom-nav {
-    display: block;
-  }
+.main-content .owl-theme .custom-nav .owl-prev i,
+.main-content .owl-theme .custom-nav .owl-next i {
+  font-size: 2.5rem;
+  color: #cecece;
+}
+
+.main-content .owl-theme .custom-nav .owl-prev {
+  left: 0;
+}
+
+.main-content .owl-theme .custom-nav .owl-next {
+  right: 0;
+}
+
+.owl-dots {
+  display: none;
+}
+
+.owl-theme .custom-nav {
+  display: none;
+}
+
+.main-content:hover .custom-nav {
+  display: block;
+}
+
+.pagination .page-numbers {
+  background: #ff7a7f;
+  color: #fff;
+  display: block;
+  width: auto;
+  float: left;
+  margin: 4px 4px 4px 0;
+  padding: 15px 18px 14px 18px;
+  text-decoration: none;
+}
+
+.pagination .page-numbers:hover {
+  background: #24221D;
+  color: #fff;
+  text-decoration: none;
+}
+
+.pagination .current {
+  background: #24221D;
+  color: #fff;
+  padding: 15px 18px 14px 18px;
+}
+
+
+/* =========================================================404 Page============================================================ */
+.error-404 {
+  padding: 100px 0;
+  position: relative;
+  background-color: #fff;
+}
+
+.error-404 .left-col {
+  width: 36%;
+  float: left;
+  margin: 0 2%;
+}
+
+.error-404 .left-col p {
+  font-size: 120px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  color: #ff7a7f;
+  line-height: 100px;
+  text-align: right;
+}
+
+.error-404 .right-col {
+  width: 50%;
+  float: left;
+  margin: 0 2%;
+}
+
+.error-404 .right-col h1 {
+  margin-bottom: 10px;
+  font-size: 29px;
+  color: #ff7a7f;
+  margin-top: 0;
+}
+
+.error-404 .right-col a {
+  color: #444;
+}
+
+.error-404 .right-col a:hover {
+  color: #ff7a7f;
+}
+
+.kopa-pagelink a:hover {
+  color: #ff7a7f;
+}
+
+.arrow-list li {
+  margin-top: 10px;
+  list-style: disc inside;
+  color: #ff7a7f;
+}
+
+.widget-area-4 {
+  margin-bottom: 35px;
+}
+
+.widget-area-4 .widget {
+  border-top: 1px solid #e1e1e1;
+  padding-top: 25px;
+  margin-top: 25px;
+  margin-bottom: 0;
+}
+
+.widget-area-4 .widget:first-child {
+  border-top: 0;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+/* Comment form  */
+#submit {
+  background: #ff7a7f;
+  color: #fff;
+  border-color: #ff7a7f;
+  padding: 12px 25px;
+  font-family: "Josefin Sans", sans-serif;
+  display: inline-block;
+  border: 1px solid transparent;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 4px;
+  color: #fff;
+  border: 1px solid #ff7a7f;
+  text-transform: uppercase;
+  background: #ff7a7f;
+  cursor: pointer;
+  transition: all 300ms linear 0s;
+  margin: 0;
+
+  line-height: inherit;
+}
+
+#submit:hover {
+  border-color: #2a2a2a;
+  background: #2a2a2a;
+  color: #fff;
+}
+
+#submit:active {
+  position: relative;
+  top: 1px;
+}
+
+img {
+  object-fit: contain;
+}
+
+#readmore {
+  color: #007bff;
+}
+#readmore:hover {
+  color: #ff7a7f;
+
+}

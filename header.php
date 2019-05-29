@@ -16,14 +16,7 @@
             <div class="row align-items-center justify-content-between">
                 <div class="col-6 col-lg-4">
                     <div class="float-left">
-                        <ul class="header_social">
-                            <li><a href="#"><i class="ti-facebook"></i></a></li>
-                            <li><a href="#"><i class="ti-twitter"></i></a></li>
-                            <li><a href="#"><i class="ti-instagram"></i></a></li>
-                            <li><a href="#"><i class="ti-skype"></i></a></li>
-                            <li><a href="#"><i class="ti-vimeo"></i></a></li>
-                        </ul>
-
+                    <?php echo do_shortcode("[socialicons location='header' href='1,2,3,4,5' class='ti-facebook, ti-twitter, ti-instagram, ti-skype, ti-vimeo']"); ?>
                     </div>
                 </div>
                 <div class="col-6 col-lg-4 col-md-6 col-sm-6 logo-wrapper">
@@ -46,8 +39,9 @@
         </div>
         <div class="search_input" id="search_input_box">
             <div class="container ">
-                <form class="d-flex justify-content-between search-inner">
-                    <input type="text" class="form-control" id="search_input" placeholder="Search Here">
+                <form class="d-flex justify-content-between search-inner" role="search" action="<?php echo home_url('/'); ?>" method="get">
+                    <input type="text" name="s" class="form-control" id="search_input" placeholder="Search Here" value="<?php the_search_query(); ?>">
+                    <input type="hidden" name="post_type" value="blogs" />
                     <button type="submit" class="btn"></button>
                     <span class="ti-close" id="close_search" title="Close Search"></span>
                 </form>
@@ -71,13 +65,13 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <?php
                     $args = [
-                        'theme_location' => 'main-menu',
-                        'menu_class' => 'nav navbar-nav menu_nav ml-auto mr-auto',
-                        'menu_id' => 'main-navigation',
-                        'add_li_class' => 'nav-item',
-                        'add_a_class' => 'nav-link',
-                        'container_class' => 'collapse navbar-collapse offset',
-                        'container_id' => 'navbarSupportedContent'
+                        'theme_location'    => 'main-menu',
+                        'menu_class'        => 'nav navbar-nav menu_nav ml-auto mr-auto',
+                        'menu_id'           => 'main-navigation',
+                        'add_li_class'      => 'nav-item',
+                        'add_a_class'       => 'nav-link',
+                        'container_class'   => 'collapse navbar-collapse offset',
+                        'container_id'      => 'navbarSupportedContent'
                     ];
                     wp_nav_menu($args);
                     ?>

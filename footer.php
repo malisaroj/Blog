@@ -41,10 +41,7 @@
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
             <div class="col-lg-4 col-md-12 text-center text-lg-right footer-social">
-                <a href="#"><i class="ti-facebook"></i></a>
-                <a href="#"><i class="ti-twitter-alt"></i></a>
-                <a href="#"><i class="ti-dribbble"></i></a>
-                <a href="#"><i class="ti-linkedin"></i></a>
+            <?php echo do_shortcode("[socialicons location='footer' href='1,2,3,4' class='ti-facebook, ti-twitter-alt, ti-dribbble, ti-linkedin']"); ?>
             </div>
         </div>
     </div>

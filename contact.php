@@ -13,7 +13,7 @@ get_header();
             <h2><?php the_title(); ?></h2>
           </div>
           <div class="page_link">
-            <a href="index.html">Home</a>
+            <a href="<?php echo esc_url(home_url()); ?>">Home</a>
             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
           </div>
         </div>
