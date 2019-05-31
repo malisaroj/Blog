@@ -31,7 +31,7 @@ get_header();
                 <div class="blog_left_sidebar">
                     <?php
                     // Protect against arbitrary paged values
-                    //$paged = (get_query_var ('paged')) ? absint (get_query_var ('paged')): 1;
+                    $paged = (get_query_var ('paged')) ? absint (get_query_var ('paged')): 1;
 
 
                     $args = array(

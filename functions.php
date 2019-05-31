@@ -18,6 +18,8 @@ include 'inc/widgets/custom_instagram_widget.php';
 
 /* Adding pagination */
 include 'inc/custom_pagination/custom_pagination.php';
+include 'inc/custom_pagination/custom_news_pagination.php';
+
 
 /* Adding instagram  */
 include 'inc/instagram_posts/instagram_post.php';
@@ -26,6 +28,12 @@ include 'inc/instagram_posts/instagram_post.php';
 //Registering custom shortcode
 include 'inc/short_code/short_code.php';
 include 'inc/short_code/social_icons.php';
+
+//Registering LoadMore 
+include 'inc/loadmore/load_more.php';
+
+//Register Customizer
+include 'inc/customizer/customizer.php';
 
 
 /*add theme support*/
@@ -77,12 +85,10 @@ function add_theme_scripts()
     wp_enqueue_script('jquery-validate-js', get_template_directory_uri() . '/js/jquery.validate.min.js', [], time(), true);
     wp_enqueue_script('theme-js', get_template_directory_uri() . '/js/theme.js', [], time(), true);
     wp_enqueue_script('main', get_template_directory_uri() . '/js/main.js', [], time(), true);
-
-
 }
 add_action('wp_enqueue_scripts', 'add_theme_scripts');
 
-
+/* Load in our Owl Carousel CSS and JS */
 function add_owl_carousel()
 {
     wp_enqueue_style('owl-carousel-min-css', get_template_directory_uri() . '/css/owl.carousel.min.css');
@@ -91,6 +97,16 @@ function add_owl_carousel()
 }
 
 add_action('wp_enqueue_scripts', 'add_owl_carousel');
+
+/* Load in our customizer JS */
+function ns0014_customizer_live_preview()
+{
+    wp_enqueue_script("ns0014-themecustomizer", get_template_directory_uri() . "js/theme-customizer.js", array("jquery", "customize-preview"), '',  true);
+}
+
+add_action("customize_preview_init", "ns0014_customizer_live_preview");
+
+
 
 /* Register menu locations */
 register_nav_menus([
@@ -142,23 +158,28 @@ add_filter('nav_menu_link_attributes', 'add_class_to_items_link', 10, 3);
 
 
 /* Adding the active class to the currently active menus */
-add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
+add_filter('nav_menu_css_class', 'special_nav_class', 10, 2);
 
-function special_nav_class ($classes, $item) {
-    if (in_array('current-menu-item', $classes) ){
+function special_nav_class($classes, $item)
+{
+    if (in_array('current-menu-item', $classes)) {
         $classes[] = 'active ';
     }
     return $classes;
 }
 
 
-function new_submenu_class($menu) {    
-    $menu = preg_replace('/ class="sub-menu"/','/ class="dropdown-menu" /',$menu);        
-    return $menu;      
+function new_submenu_class($menu)
+{
+    $menu = preg_replace('/ class="sub-menu"/', '/ class="dropdown-menu" /', $menu);
+    return $menu;
 }
 
-add_filter('wp_nav_menu','new_submenu_class'); 
+add_filter('wp_nav_menu', 'new_submenu_class');
 
 //Enabling the shortcode to be used in custom html widget
-add_filter( 'widget_text', 'do_shortcode' );
+add_filter('widget_text', 'do_shortcode');
+
+
+
 

@@ -264,13 +264,13 @@ get_header(); ?>
                     <?php endif; ?>
 
                 </div>
-                <div class="row">
+                <!--  <div class="row">
                     <div class="col-12">
                         <div class="addvertise">
                             <a href=""><img src="img/banner/add.jpg" alt=""></a>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
 </section>
 <!--================ Editors Picks section end =================-->

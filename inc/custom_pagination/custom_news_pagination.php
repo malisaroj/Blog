@@ -1,0 +1,64 @@
+<?php
+function ea_news_navigation()
+{
+	$settings = array(
+		'count' => 6,
+		'prev_text'       => __('&laquo; Prev Page'),
+		'next_text'       => __('Next Page &raquo;'),
+	);
+	global $wp_query;
+	$current = max(1, get_query_var('paged'));
+	//$total = $wp_query->max_num_pages;
+	$published_posts = wp_count_posts('news')->publish;
+	$posts_per_page = 5;
+	$total = ceil($published_posts / $posts_per_page);
+	$links = array();
+	// Offset for next link
+	if ($current < $total)
+		$settings['count']--;
+	// Previous
+	if ($current > 1) {
+		$settings['count']--;
+		$links[] = ea_news_navigation_link($current - 1, 'prev', $settings['prev_text']);
+	}
+	// Current
+	$links[] = ea_news_navigation_link($current, 'current');
+	// Next Pages
+	for ($i = 1; $i < $settings['count']; $i++) {
+		$page = $current + $i;
+		if ($page <= $total) {
+			$links[] = ea_news_navigation_link($page);
+		}
+	}
+	// Next
+	if ($current < $total) {
+		$links[] = ea_news_navigation_link($current + 1, 'next', $settings['next_text']);
+	}
+	echo '<nav class="navigation posts-navigation" role="navigation">';
+	echo '<div class="nav-links">' . join('', $links) . '</div>';
+	echo '</nav>';
+}
+add_action('tha_content_while_after', 'ea_news_navigation');
+/**
+ * news Navigation Link
+ *
+ * @author Bill Erickson
+ * @see https://www.billerickson.net/custom-pagination-links/
+ *
+ * @param int $page
+ * @param string $class
+ * @param string $label
+ * @return string $link
+ */
+function ea_news_navigation_link($page = false, $class = '', $label = '')
+{
+	if (!$page)
+		return;
+	$classes = array('page-numbers');
+	if (!empty($class))
+		$classes[] = $class;
+	$classes = array_map('sanitize_html_class', $classes);
+	$label = $label ? $label : $page;
+	$link = esc_url_raw(get_pagenum_link($page));
+	return '<a class="' . join(' ', $classes) . '" href="' . $link . '">' . $label . '</a>';
+}

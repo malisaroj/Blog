@@ -30,10 +30,12 @@ get_header();
       <div id="map" style="height: 480px;"></div>
       <script>
         function initMap() {
-          var uluru = {
-            lat: -25.363,
-            lng: 131.044
+          // The location of Kathmandu
+          var kat = {
+            lat: 27.722661,
+            lng: 85.359006
           };
+
           var grayStyles = [{
               featureType: "all",
               stylers: [{
@@ -51,18 +53,23 @@ get_header();
               }]
             }
           ];
-          var map = new google.maps.Map(document.getElementById('map'), {
-            center: {
-              lat: -31.197,
-              lng: 150.744
-            },
-            zoom: 9,
-            styles: grayStyles,
-            scrollwheel: false
+          // The map, centered at Kathmandu
+          var map = new google.maps.Map(
+            document.getElementById('map'), {
+              zoom: 11,
+              center: kat,
+              styles: grayStyles,
+              scrollwheel: false
+            });
+          // The marker, positioned at Kathmandu
+          var marker = new google.maps.Marker({
+            position: kat,
+            map: map,
+
           });
         }
       </script>
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfS1oRGreGSBU5HHjMmQ3o5NLw7VdJ6I&callback=initMap"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCONJjnmcqycWF-x7GhwDVC69ua3JZmG5E&callback=initMap" async defer></script>
     </div>
 
     <div class="row">

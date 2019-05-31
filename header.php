@@ -16,7 +16,7 @@
             <div class="row align-items-center justify-content-between">
                 <div class="col-6 col-lg-4">
                     <div class="float-left">
-                    <?php echo do_shortcode("[socialicons location='header' href='1,2,3,4,5' class='ti-facebook, ti-twitter, ti-instagram, ti-skype, ti-vimeo']"); ?>
+                        <?php echo do_shortcode("[socialicons location='header' href='1,2,3,4,5' class='ti-facebook, ti-twitter, ti-instagram, ti-skype, ti-vimeo']"); ?>
                     </div>
                 </div>
                 <div class="col-6 col-lg-4 col-md-6 col-sm-6 logo-wrapper">
