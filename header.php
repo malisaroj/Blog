@@ -16,7 +16,24 @@
             <div class="row align-items-center justify-content-between">
                 <div class="col-6 col-lg-4">
                     <div class="float-left">
-                        <?php echo do_shortcode("[socialicons location='header' href='1,2,3,4,5' class='ti-facebook, ti-twitter, ti-instagram, ti-skype, ti-vimeo']"); ?>
+                        <ul class="header_social">
+                        <?php if (!empty(  get_theme_mod("url_facebook") )) { ?>
+                            <li><a href="<?php echo get_theme_mod("url_facebook"); ?>"><i class="ti-facebook"></i></a></li>
+                            <?php } ?>
+                            <?php if (!empty(  get_theme_mod("url_twitter") )) { ?>
+                            <li><a href="<?php echo get_theme_mod("url_twitter"); ?>"><i class="ti-twitter"></i></a></li>
+                            <?php } ?>
+                            <?php if (!empty(  get_theme_mod("url_instagram") )) { ?>
+                            <li><a href="<?php echo get_theme_mod("url_instagram"); ?>"><i class="ti-instagram"></i></a></li>
+                            <?php } ?>
+                            <?php if (!empty(  get_theme_mod("url_skype") )) { ?>
+                            <li><a href="<?php echo get_theme_mod("url_skype"); ?>"><i class="ti-skype"></i></a></li>
+                            <?php } ?>
+                            <?php if (!empty(  get_theme_mod("url_vimeo") )) { ?>
+                            <li><a href="<?php echo get_theme_mod("url_vimeo"); ?>"><i class="ti-vimeo"></i></a></li>
+                            <?php } ?>
+
+                        </ul>
                     </div>
                 </div>
                 <div class="col-6 col-lg-4 col-md-6 col-sm-6 logo-wrapper">

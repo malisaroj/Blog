@@ -3,6 +3,103 @@
 function ns0014_customize_register($wp_customize)
 {
     /* Customizer for Social Icons on header */
+
+    $wp_customize->add_section("icons", array(
+        "title" => __("Social Icons", "customizer_icons_sections"),
+        "description" => __('Add Social Icons links here'),
+        "priority" => 230,
+    ));
+
+    $wp_customize->add_setting("url_facebook", array(
+        "default" => "",
+        "transport" => "refresh",
+    ));
+
+    $wp_customize->add_control(new Wp_Customize_Control(
+        $wp_customize,
+        "url_facebook", //setting id
+        array(
+            "label" => __("Enter Facebook Link Here", "customizer_link_code_label"),
+            "section" => "icons",
+            "settings" => "url_facebook",
+            "type" => "url",
+        )
+
+    ));
+
+    $wp_customize->add_setting("url_instagram", array(
+        "default" => "",
+        "transport" => "refresh",
+    ));
+
+    $wp_customize->add_control(new Wp_Customize_Control(
+        $wp_customize,
+        "url_instagram", //setting id
+        array(
+            "label" => __("Enter Instagram Link Here", "customizer_link_code_label"),
+            "section" => "icons",
+            "settings" => "url_instagram",
+            "type" => "url",
+        )
+
+    ));
+    
+    $wp_customize->add_setting("url_twitter", array(
+        "default" => "",
+        "transport" => "refresh",
+    ));
+
+    $wp_customize->add_control(new Wp_Customize_Control(
+        $wp_customize,
+        "url_twitter", //setting id
+        array(
+            "label" => __("Enter Twitter Link Here", "customizer_link_code_label"),
+            "section" => "icons",
+            "settings" => "url_twitter",
+            "type" => "url",
+        )
+
+    ));
+
+    $wp_customize->add_setting("url_skype", array(
+        "default" => "",
+        "transport" => "refresh",
+    ));
+
+    $wp_customize->add_control(new Wp_Customize_Control(
+        $wp_customize,
+        "url_skype", //setting id
+        array(
+            "label" => __("Enter Skype Link Here", "customizer_link_code_label"),
+            "section" => "icons",
+            "settings" => "url_skype",
+            "type" => "url",
+        )
+
+    ));
+    $wp_customize->add_setting("url_vimeo", array(
+        "default" => "",
+        "transport" => "refresh",
+    ));
+
+    $wp_customize->add_control(new Wp_Customize_Control(
+        $wp_customize,
+        "url_vimeo", //setting id
+        array(
+            "label" => __("Enter Vimeo Link Here", "customizer_link_code_label"),
+            "section" => "icons",
+            "settings" => "url_vimeo",
+            "type" => "url",
+        )
+
+    ));
+
+
+
+
+
+    /* Customizer for About Us in Footer */
+
     $wp_customize->add_section("about", array(
         "title" => __("About Us", "customizer_about_sections"),
         "description" => __('Add About Us details here'),
