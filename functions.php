@@ -36,6 +36,8 @@ include 'inc/loadmore/load_more.php';
 include 'inc/customizer/customizer.php';
 
 
+
+
 /*add theme support*/
 add_theme_support('title-tag');
 add_theme_support('post-thumbnails');
@@ -182,4 +184,17 @@ add_filter('widget_text', 'do_shortcode');
 
 
 
-
+add_filter('the_content', 'mte_add_incontent_ad');
+function mte_add_incontent_ad($content)
+{	if(is_single()){
+		$content_block = explode('<p>',$content);
+		if(!empty($content_block[2]))
+		{	$content_block[2] .= '<div class="quote-wrapper"><div class="quotes">' . get_the_excerpt() . '</div></div>';
+		}
+		for($i=1;$i<count($content_block);$i++)
+		{	$content_block[$i] = '<p>'.$content_block[$i];
+		}
+		$content = implode('',$content_block);
+	}
+	return $content;	
+}

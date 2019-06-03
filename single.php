@@ -40,13 +40,9 @@ get_header();
                         </ul>
                         <p class="excert"><?php echo get_the_excerpt(); ?></p>
                         <p>
-                            <?php echo  get_the_content(); ?>
+                            <?php the_content(); ?>
                         </p>
-                        <div class="quote-wrapper">
-                            <div class="quotes">
-                                <?php echo get_the_excerpt(); ?>
-                            </div>
-                        </div>
+
 
                     </div>
                 </div>
