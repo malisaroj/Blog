@@ -69,7 +69,7 @@ get_header();
           });
         }
       </script>
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCONJjnmcqycWF-x7GhwDVC69ua3JZmG5E&callback=initMap" async defer></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key='apikey'&callback=initMap" async defer></script>
     </div>
 
     <div class="row">
